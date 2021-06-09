@@ -1,0 +1,75 @@
+game.StarterGui:SetCore("SendNotification", {
+Title = "Robloxbypass.pw";
+Text = "RobloxBypass.pw - Swear on Roblox & get cool scripts!";
+Icon = "rbxassetid://57254792";
+Duration = 3.5;
+})
+
+
+local Player = game.Players.LocalPlayer
+local Tool = Instance.new("Tool")
+
+local Mouse = Player:GetMouse()
+
+Tool.Name = "Invisible"
+Tool.Parent = Player.Backpack
+Tool.RequiresHandle = false
+
+Tool.Activated:Connect(function()
+   if Mouse.Target then
+       local Potion = game.Players:FindFirstChild("OddPotion", true)  or workspace:FindFirstChild("OddPotion", true)
+       if Potion then
+           if Mouse.Target.Transparency and Mouse.Target.Transparency < 1 then
+               Potion.TransEvent:FireServer(Mouse.Target, 1)
+           elseif Mouse.Target.Transparency and Mouse.Target.Transparency > 0 then
+               Potion.TransEvent:FireServer(Mouse.Target, 0)
+           end
+       end
+   end
+end)
+
+
+local Player = game.Players.LocalPlayer
+local Tool = Instance.new("Tool")
+
+local Mouse = Player:GetMouse()
+
+Tool.Name = "Ghost"
+Tool.Parent = Player.Backpack
+Tool.RequiresHandle = false
+
+Tool.Activated:Connect(function()
+   if Mouse.Target then
+       local Potion = game.Players:FindFirstChild("OddPotion", true)  or workspace:FindFirstChild("OddPotion", true)
+       if Potion then
+           if Mouse.Target.Transparency and Mouse.Target.Transparency < 0.6 then
+               Potion.TransEvent:FireServer(Mouse.Target, 0.6)
+           elseif Mouse.Target.Transparency and Mouse.Target.Transparency > 0 then
+               Potion.TransEvent:FireServer(Mouse.Target, 0)
+           end
+       end
+   end
+end)
+
+local Player = game.Players.LocalPlayer
+local Tool = Instance.new("Tool")
+
+local Mouse = Player:GetMouse()
+
+Tool.Name = "FakeDelete"
+Tool.Parent = Player.Backpack
+Tool.RequiresHandle = false
+
+Tool.Activated:Connect(function()
+   if Mouse.Target then
+       local Potion = game.Players:FindFirstChild("OddPotion", true)  or workspace:FindFirstChild("OddPotion", true)
+       if Potion then
+           if Mouse.Target.Transparency and Mouse.Target.Transparency < 1 then
+               Potion.TransEvent:FireServer(Mouse.Target, 1)
+               Mouse.Target:Destroy()
+           elseif Mouse.Target.Transparency and Mouse.Target.Transparency > 0 then
+               Potion.TransEvent:FireServer(Mouse.Target, 0)
+           end
+       end
+   end
+end)
